@@ -1,0 +1,7 @@
+[gd_resource type="Shortcut" load_steps=3 format=3 uid="uid://bphy23sibjl4d"]
+
+[ext_resource type="InputEventKey" uid="uid://cbhtikfba7004" path="res://resource/shortcut/key/left_enter.tres" id="1_2vmsi"]
+[ext_resource type="InputEventJoypadButton" uid="uid://cjj4obmskpjia" path="res://resource/shortcut/joykey/A.tres" id="2_ss18w"]
+
+[resource]
+events = [ExtResource("1_2vmsi"), ExtResource("2_ss18w")]

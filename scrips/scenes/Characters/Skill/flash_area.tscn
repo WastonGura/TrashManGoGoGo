@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cap4jras4xfpo"]
+
+[ext_resource type="Texture2D" uid="uid://ck6hlcoiu4tvo" path="res://asset/image/Skill/flash/flash_00000.png" id="1_kk05u"]
+[ext_resource type="Script" uid="uid://dnyhwevy36f1d" path="res://scrips/Game/player/skills/flash.gd" id="1_ys4ju"]
+[ext_resource type="AnimationLibrary" uid="uid://bjpo8wmdliy50" path="res://resource/AnimationRoot/Animation/Library/FlashAnimation.res" id="2_c0upe"]
+[ext_resource type="AudioStream" uid="uid://ca1hkv1ikbld2" path="res://asset/audio/SoundEffect/雷电.wav" id="5_3urdg"]
+[ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="5_e8t5c"]
+
+[node name="FlashArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "timer", "animation_player") groups=["Hurtbox"]]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_ys4ju")
+flight_attack_component = NodePath("FlightAttackComponent")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Flash" type="Sprite2D" parent="."]
+scale = Vector2(0.213318, 0.213318)
+texture = ExtResource("1_kk05u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(58, -48, 27, 30, -11, 58, -79, 38, -43, 6, -41, -27, 10, -49, 10, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"FlashAnimation": ExtResource("2_c0upe")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[node name="FlightAttackComponent" type="Node2D" parent="."]
+script = ExtResource("5_e8t5c")
+metadata/_custom_type_script = "uid://d2i123i0ly6kg"
+
+[node name="FlashAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3urdg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ik4s0qsbljs"]
+
+[ext_resource type="Script" uid="uid://caehjt5tc8ucs" path="res://scrips/GameOver/QuitMenu.gd" id="1_34ov3"]
+[ext_resource type="StyleBox" uid="uid://1wvq0vrtg1vs" path="res://resource/Color/BlueCorner.tres" id="2_wuevx"]
+[ext_resource type="FontFile" uid="uid://0yxva75t0n2j" path="res://resource/fonts/FFF_AZADLIQ-Black.otf" id="3_4kjta"]
+[ext_resource type="StyleBox" uid="uid://bs7h0jwcju4fq" path="res://resource/Color/new_style_box_empty.tres" id="4_a58kb"]
+[ext_resource type="Shortcut" uid="uid://bphy23sibjl4d" path="res://resource/shortcut/comfirm.tres" id="5_sx6cj"]
+[ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://resource/shortcut/back.tres" id="6_l6c18"]
+
+[node name="QuitMenu" type="Control"]
+layout_mode = 3
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34ov3")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_wuevx")
+
+[node name="Title" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.15
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4kjta")
+theme_override_font_sizes/font_size = 60
+text = "确定要退出游戏吗"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Comfirm" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.75
+anchor_right = 0.35
+anchor_bottom = 0.85
+offset_top = -31.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_4kjta")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("4_a58kb")
+theme_override_styles/hover_pressed = ExtResource("4_a58kb")
+theme_override_styles/hover = ExtResource("4_a58kb")
+theme_override_styles/pressed = ExtResource("4_a58kb")
+theme_override_styles/normal = ExtResource("4_a58kb")
+shortcut = ExtResource("5_sx6cj")
+text = "确定"
+
+[node name="Quit" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.75
+anchor_right = 0.85
+anchor_bottom = 0.85
+offset_left = -40.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_4kjta")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("4_a58kb")
+theme_override_styles/hover_pressed = ExtResource("4_a58kb")
+theme_override_styles/hover = ExtResource("4_a58kb")
+theme_override_styles/pressed = ExtResource("4_a58kb")
+theme_override_styles/normal = ExtResource("4_a58kb")
+shortcut = ExtResource("6_l6c18")
+text = "取消"
+
+[connection signal="pressed" from="BG/Comfirm" to="." method="_on_comfirm_pressed"]
+[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]

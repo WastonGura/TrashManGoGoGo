@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cap4jras4xfpo"]
+
+[ext_resource type="Script" uid="uid://dnyhwevy36f1d" path="res://scrips/Game/player/skills/flash.gd" id="1_ys4ju"]
+[ext_resource type="AnimationLibrary" uid="uid://bjpo8wmdliy50" path="res://scrips/resource/AnimationRoot/Animation/Library/FlashAnimation.res" id="2_c0upe"]
+[ext_resource type="Texture2D" uid="uid://82rule6l7xy4" path="res://scrips/asset/image/Skill/flash/flash_00003.png" id="2_e8t5c"]
+[ext_resource type="AudioStream" uid="uid://ca1hkv1ikbld2" path="res://scrips/asset/audio/SoundEffect/雷电.wav" id="5_3urdg"]
+[ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="5_e8t5c"]
+
+[node name="FlashArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "timer", "animation_player") groups=["Hurtbox"]]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("1_ys4ju")
+flight_attack_component = NodePath("FlightAttackComponent")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Flash" type="Sprite2D" parent="."]
+position = Vector2(169.7, -100)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_e8t5c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(173.094, -101.895)
+scale = Vector2(2.63982, 2.677)
+polygon = PackedVector2Array(58, -48, 77.8865, -13.487, 4.77547, 65.3327, -80.8364, 40.3046, -43, 6, -44.4703, -28.0555, 9.70005, -51.5893, 10, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"FlashAnimation": ExtResource("2_c0upe")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[node name="FlightAttackComponent" type="Node2D" parent="."]
+script = ExtResource("5_e8t5c")
+metadata/_custom_type_script = "uid://d2i123i0ly6kg"
+
+[node name="FlashAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3urdg")
+volume_db = 3.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,52 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=11 format=3 uid="uid://c1ypyydtijnd2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tqihs"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wnh68"]
+animation = &"ShieldAnimation/ShieldContinue"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lu2p4"]
+animation = &"ShieldAnimation/ShieldEnd"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_63lvc"]
+animation = &"ShieldAnimation/ShieldStart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y5qdd"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "continue_shield"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nm2c3"]
+advance_mode = 2
+advance_expression = "end"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xrw7o"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "end"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_duyh8"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "end"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mid71"]
+advance_mode = 2
+advance_expression = "start"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxoqr"]
+advance_mode = 2
+
+[resource]
+states/Idle/node = SubResource("AnimationNodeAnimation_tqihs")
+states/Idle/position = Vector2(507, -76)
+states/ShieldContinue/node = SubResource("AnimationNodeAnimation_wnh68")
+states/ShieldContinue/position = Vector2(541, 146)
+states/ShieldEnd/node = SubResource("AnimationNodeAnimation_lu2p4")
+states/ShieldEnd/position = Vector2(711, 55)
+states/ShieldStart/node = SubResource("AnimationNodeAnimation_63lvc")
+states/ShieldStart/position = Vector2(359, 63)
+states/Start/position = Vector2(126, -5)
+transitions = ["ShieldStart", "ShieldContinue", SubResource("AnimationNodeStateMachineTransition_y5qdd"), "ShieldContinue", "ShieldEnd", SubResource("AnimationNodeStateMachineTransition_nm2c3"), "ShieldStart", "ShieldEnd", SubResource("AnimationNodeStateMachineTransition_xrw7o"), "ShieldEnd", "Idle", SubResource("AnimationNodeStateMachineTransition_duyh8"), "Idle", "ShieldStart", SubResource("AnimationNodeStateMachineTransition_mid71"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxoqr")]
+graph_offset = Vector2(50, -194)
