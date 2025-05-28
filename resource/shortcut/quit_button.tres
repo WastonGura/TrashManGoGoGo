@@ -1,0 +1,7 @@
+[gd_resource type="Shortcut" load_steps=3 format=3 uid="uid://cmavkcl7tbsm5"]
+
+[ext_resource type="InputEventKey" uid="uid://ckidmp2fkraft" path="res://resource/shortcut/key/H.tres" id="1_khkce"]
+[ext_resource type="InputEventJoypadButton" uid="uid://cmx68tbw4544q" path="res://resource/shortcut/joykey/手柄退出键.tres" id="2_d3577"]
+
+[resource]
+events = [ExtResource("1_khkce"), ExtResource("2_d3577")]

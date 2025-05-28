@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cidox315rw6mo"]
+
+[node name="PlayerIcon" type="CanvasLayer"]

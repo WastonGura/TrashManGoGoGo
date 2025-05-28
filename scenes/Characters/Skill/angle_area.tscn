@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj7vn3bi8e132"]
+
+[ext_resource type="Texture2D" uid="uid://d3ycrkocji6ug" path="res://asset/image/Skill/angle/angle_00000.png" id="1_0s1l2"]
+[ext_resource type="Script" uid="uid://bvakrstf4a8al" path="res://scrips/Game/player/skills/angle.gd" id="1_asung"]
+[ext_resource type="Shape2D" uid="uid://h1mrqh1ijqpn" path="res://resource/Shape/angle_shape.tres" id="2_6opah"]
+[ext_resource type="AnimationLibrary" uid="uid://c5mqlsnufc55a" path="res://resource/AnimationRoot/Animation/Library/AngleAnimation.res" id="3_6opah"]
+[ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="6_5iqkl"]
+[ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="7_qu3jo"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://asset/audio/SoundEffect/确认音效.wav" id="7_vu077"]
+
+[node name="AngleArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "flight_component", "animation_player") groups=["Hurtbox"]]
+collision_layer = 16
+collision_mask = 33
+priority = 50
+script = ExtResource("1_asung")
+flight_attack_component = NodePath("FlightAttackComponent")
+flight_component = NodePath("FlightComponent")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Angle" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_0s1l2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = ExtResource("2_6opah")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"AngleAnimation": ExtResource("3_6opah")
+}
+
+[node name="FlightComponent" type="Node2D" parent="."]
+script = ExtResource("6_5iqkl")
+speed = 1000.0
+lifetime_timer = 2.0
+metadata/_custom_type_script = "uid://d2t5myp5pulfg"
+
+[node name="FlightAttackComponent" type="Node2D" parent="."]
+script = ExtResource("7_qu3jo")
+ATK = 50
+metadata/_custom_type_script = "uid://d2i123i0ly6kg"
+
+[node name="AngleAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vu077")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

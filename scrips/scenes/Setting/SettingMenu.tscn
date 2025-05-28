@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp8jvarnkx6ia"]
+
+[ext_resource type="Texture2D" uid="uid://bt8fwx4tnapve" path="res://asset/test/images/CG4-1a.png" id="1_r2ghf"]
+[ext_resource type="Script" uid="uid://c7eg4x8g7bvm8" path="res://scrips/SettingMenu/SettingMenu.gd" id="1_xf3w0"]
+[ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://resource/shortcut/quit_button.tres" id="2_g6dxv"]
+[ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://asset/image/UI/MainMenu/Quit@2x.png" id="4_xf3w0"]
+[ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://resource/shortcut/back.tres" id="5_bhxxo"]
+[ext_resource type="Texture2D" uid="uid://bmv7y6j6gronl" path="res://asset/image/UI/MainMenu/Home@2x.png" id="6_kobes"]
+
+[node name="SettingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xf3w0")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r2ghf")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.99
+anchor_right = 0.99
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("2_g6dxv")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_xf3w0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Home" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.99
+anchor_right = 0.95
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("5_bhxxo")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("6_kobes")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BG/Home" to="." method="_on_home_pressed"]

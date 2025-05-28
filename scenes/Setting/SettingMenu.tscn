@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp8jvarnkx6ia"]
+
+[ext_resource type="Script" uid="uid://c7eg4x8g7bvm8" path="res://scrips/SettingMenu/SettingMenu.gd" id="1_xf3w0"]
+[ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://scrips/resource/shortcut/quit_button.tres" id="2_g6dxv"]
+[ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://scrips/asset/image/UI/MainMenu/Quit@2x.png" id="4_xf3w0"]
+[ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://scrips/resource/shortcut/back.tres" id="5_bhxxo"]
+[ext_resource type="Texture2D" uid="uid://bmv7y6j6gronl" path="res://scrips/asset/image/UI/MainMenu/Home@2x.png" id="6_kobes"]
+[ext_resource type="FontFile" uid="uid://0yxva75t0n2j" path="res://scrips/resource/fonts/FFF_AZADLIQ-Black.otf" id="7_kobes"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bhxxo"]
+load_path = "res://.godot/imported/bg2.png-618e8e0e7cddf37e090f7a56c2b5a9ec.ctex"
+
+[node name="SettingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xf3w0")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_bhxxo")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.99
+anchor_right = 0.99
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("2_g6dxv")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_xf3w0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Home" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.99
+anchor_right = 0.95
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("5_bhxxo")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("6_kobes")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.436451, 0.557375, 0.884472, 1)
+theme_override_fonts/font = ExtResource("7_kobes")
+theme_override_font_sizes/font_size = 80
+text = "w/UP -> 吃垃圾
+s/DOWN -> 防御
+A/LEFT -> 左移动
+D/RIGHT -> 右移动
+J/1 ->  普通攻击
+K/2 -> 跳跃
+L/3 -> 神威
+E/4 -> 远程攻击
+Q/5 -> 飞箭
+Q+W/5+UP -> 星星
+Q+S/5+DOWN -> 闪电"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.758011, 0.289115, 0.241999, 1)
+theme_override_fonts/font = ExtResource("7_kobes")
+theme_override_font_sizes/font_size = 60
+text = "感谢游玩本游戏，第一次制作游戏bug比较多，请见谅。
+游戏使用Godot4.4引擎制作。
+Godot下载地址：https://godotengine.org/download/archive/4.4.1-stable/
+本游戏Github地址：https://github.com/WastonGura/TrashManGoGoGo
+欢迎大佬们来修改游戏"
+
+[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BG/Home" to="." method="_on_home_pressed"]

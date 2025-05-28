@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://derenm21ya4gv"]
+
+[ext_resource type="Script" uid="uid://d3ej3x64qg8c3" path="res://scrips/Game/player/flight/Pot.gd" id="1_mt4lf"]
+[ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="3_b28j5"]
+[ext_resource type="Shape2D" uid="uid://qxfwl5eg8th0" path="res://resource/Shape/pot_attack.tres" id="3_vw8vx"]
+[ext_resource type="Texture2D" uid="uid://b3rd4t4d1j0jd" path="res://asset/image/TrashMan/桶盖 平视.png" id="4_x501p"]
+[ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="5_7y0cv"]
+
+[node name="Pot" type="Area2D" node_paths=PackedStringArray("flight_component", "flight_attack_component") groups=["Hurtbox"]]
+collision_layer = 4
+collision_mask = 32
+input_pickable = false
+script = ExtResource("1_mt4lf")
+flight_component = NodePath("FlightComponent")
+flight_attack_component = NodePath("FlightAttackComponent")
+
+[node name="FlightAttackComponent" type="Node2D" parent="."]
+script = ExtResource("3_b28j5")
+metadata/_custom_type_script = "uid://d2i123i0ly6kg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = ExtResource("3_vw8vx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_x501p")
+
+[node name="FlightComponent" type="Node2D" parent="."]
+script = ExtResource("5_7y0cv")
+speed = 800.0
+lifetime_timer = 4.0
+metadata/_custom_type_script = "uid://d2t5myp5pulfg"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

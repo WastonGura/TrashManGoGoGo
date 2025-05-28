@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs68oqb5sgkww"]
+
+[ext_resource type="Texture2D" uid="uid://bejf5h4u3wqxs" path="res://asset/image/Trash/Trash4.png" id="1_2tipa"]
+[ext_resource type="Script" uid="uid://dreyah3w5rc34" path="res://scrips/Trash/new_paper.gd" id="1_7op1s"]
+[ext_resource type="Shape2D" uid="uid://b0y227siqx5rp" path="res://resource/Shape/Trash/new_paper_shape_2d.tres" id="2_7op1s"]
+
+[node name="new_paper" type="Area2D" groups=["Trash"]]
+visible = false
+script = ExtResource("1_7op1s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2tipa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = ExtResource("2_7op1s")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

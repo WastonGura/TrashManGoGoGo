@@ -1,0 +1,258 @@
+[gd_scene load_steps=19 format=3 uid="uid://b4i6msp5ihqgm"]
+
+[ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://resource/shortcut/quit_button.tres" id="2_4fqvh"]
+[ext_resource type="Texture2D" uid="uid://cx1pisjxe2y4k" path="res://asset/image/UI/LobbyMenu/LobbyBG.png" id="2_lr4hr"]
+[ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://asset/image/UI/MainMenu/Quit@2x.png" id="4_4n0g8"]
+[ext_resource type="Shortcut" uid="uid://ca7ngw5p72jkv" path="res://resource/shortcut/systom.tres" id="5_hyr58"]
+[ext_resource type="Texture2D" uid="uid://bur4sspysoxut" path="res://asset/image/UI/MainMenu/systom@2x.png" id="6_0rxdb"]
+[ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://resource/shortcut/back.tres" id="7_0rxdb"]
+[ext_resource type="Texture2D" uid="uid://bmv7y6j6gronl" path="res://asset/image/UI/MainMenu/Home@2x.png" id="7_hyr58"]
+[ext_resource type="Texture2D" uid="uid://buy2emxknrum1" path="res://asset/image/UI/LobbyMenu/P1Idle.png" id="9_owgsf"]
+[ext_resource type="Texture2D" uid="uid://cma355rq0ga6g" path="res://asset/image/UI/LobbyMenu/P2Idle.png" id="10_hregc"]
+[ext_resource type="Texture2D" uid="uid://df4em78j8g2pq" path="res://asset/image/UI/LobbyMenu/P1Choosed.png" id="11_bljag"]
+[ext_resource type="Texture2D" uid="uid://btf2od7x3y8d5" path="res://asset/image/UI/LobbyMenu/P2Choosed.png" id="12_xnqcd"]
+[ext_resource type="FontFile" uid="uid://0yxva75t0n2j" path="res://resource/fonts/FFF_AZADLIQ-Black.otf" id="13_hregc"]
+[ext_resource type="StyleBox" uid="uid://bs7h0jwcju4fq" path="res://resource/Color/new_style_box_empty.tres" id="14_bljag"]
+
+[sub_resource type="Animation" id="Animation_ukm8p"]
+resource_name = "P1Choosed"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_owgsf"), ExtResource("11_bljag")]
+}
+
+[sub_resource type="Animation" id="Animation_itdj0"]
+resource_name = "P2Choosed"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("10_hregc"), ExtResource("12_xnqcd")]
+}
+
+[sub_resource type="Animation" id="Animation_1ep8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_owgsf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_hregc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t16v3"]
+_data = {
+&"P1Choosed": SubResource("Animation_ukm8p"),
+&"P2Choosed": SubResource("Animation_itdj0"),
+&"RESET": SubResource("Animation_1ep8p")
+}
+
+[sub_resource type="AudioStream" id="AudioStream_owgsf"]
+
+[node name="LobbyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lr4hr")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Quit" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.99
+anchor_right = 0.99
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("2_4fqvh")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_4n0g8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Systom" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.99
+anchor_right = 0.95
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("5_hyr58")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("6_0rxdb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GoHome" type="TextureButton" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91
+anchor_top = 0.99
+anchor_right = 0.91
+anchor_bottom = 0.99
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+shortcut = ExtResource("7_0rxdb")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("7_hyr58")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="P1" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07
+anchor_top = 0.5
+anchor_right = 0.42
+anchor_bottom = 0.5
+offset_left = -0.200005
+offset_top = -252.0
+offset_right = 39.8
+offset_bottom = 251.295
+grow_vertical = 2
+texture = ExtResource("9_owgsf")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="SelectionPanelP1" type="Panel" parent="BG/P1"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterDisplay" type="Node2D" parent="BG/P1/SelectionPanelP1"]
+
+[node name="P2" type="TextureRect" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("10_hregc")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="SelectionPanelP2" type="Panel" parent="BG/P2"]
+visible = false
+clip_children = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.03
+anchor_right = 0.85
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterDisplay" type="Node2D" parent="BG/P2/SelectionPanelP2"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG"]
+libraries = {
+&"": SubResource("AnimationLibrary_t16v3")
+}
+
+[node name="P2Label" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.03
+anchor_right = 0.8
+anchor_bottom = 0.03
+offset_left = -105.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_hregc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("14_bljag")
+text = "选择角色"
+
+[node name="P1Label" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.03
+anchor_right = 0.2
+anchor_bottom = 0.03
+offset_left = 1.52588e-05
+offset_right = 105.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_hregc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("14_bljag")
+text = "选择角色"
+
+[node name="SelectionAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_owgsf")
+
+[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="BG/Systom" to="." method="_on_systom_pressed"]
+[connection signal="pressed" from="BG/GoHome" to="." method="_on_go_home_pressed"]

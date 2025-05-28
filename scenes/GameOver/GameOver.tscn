@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://4hxv5rmmdh7w"]
+
+[ext_resource type="Script" uid="uid://c2jhqxitt0ut2" path="res://scrips/GameOver/game_over.gd" id="1_xhtoj"]
+[ext_resource type="StyleBox" uid="uid://1wvq0vrtg1vs" path="res://scrips/resource/Color/BlueCorner.tres" id="2_h8xkf"]
+[ext_resource type="AudioStream" uid="uid://cogq66ymk3ifv" path="res://scrips/asset/audio/Bgm/目黒将司 - 勝利.ogg" id="2_kgfi2"]
+[ext_resource type="FontFile" uid="uid://0yxva75t0n2j" path="res://scrips/resource/fonts/FFF_AZADLIQ-Black.otf" id="3_jqbrx"]
+[ext_resource type="StyleBox" uid="uid://bs7h0jwcju4fq" path="res://scrips/resource/Color/new_style_box_empty.tres" id="4_x1mio"]
+[ext_resource type="Shortcut" uid="uid://bphy23sibjl4d" path="res://scrips/resource/shortcut/comfirm.tres" id="5_t8fne"]
+[ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://scrips/resource/shortcut/back.tres" id="6_qgais"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scrips/asset/audio/SoundEffect/确认音效.wav" id="8_x1mio"]
+[ext_resource type="AudioStream" uid="uid://bygor1qu8qmpt" path="res://scrips/asset/audio/SoundEffect/移动UI音效.wav" id="9_t8fne"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchor_left = 0.35
+anchor_top = 0.35
+anchor_right = 0.65
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhtoj")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_h8xkf")
+
+[node name="Title" type="Label" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_jqbrx")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Comfirm" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.75
+anchor_right = 0.35
+anchor_bottom = 0.85
+offset_top = -31.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_jqbrx")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("4_x1mio")
+theme_override_styles/hover_pressed = ExtResource("4_x1mio")
+theme_override_styles/hover = ExtResource("4_x1mio")
+theme_override_styles/pressed = ExtResource("4_x1mio")
+theme_override_styles/normal = ExtResource("4_x1mio")
+shortcut = ExtResource("5_t8fne")
+text = "主界面"
+
+[node name="Quit" type="Button" parent="BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.75
+anchor_right = 0.85
+anchor_bottom = 0.85
+offset_left = -40.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_colors/font_hover_color = Color(0.819608, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("3_jqbrx")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = ExtResource("4_x1mio")
+theme_override_styles/hover_pressed = ExtResource("4_x1mio")
+theme_override_styles/hover = ExtResource("4_x1mio")
+theme_override_styles/pressed = ExtResource("4_x1mio")
+theme_override_styles/normal = ExtResource("4_x1mio")
+shortcut = ExtResource("6_qgais")
+text = "退出"
+
+[node name="Winner" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kgfi2")
+volume_db = -9.0
+autoplay = true
+parameters/looping = true
+
+[node name="confirm_sound_voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_x1mio")
+
+[node name="move_sound_voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_t8fne")
+
+[connection signal="focus_entered" from="BG/Comfirm" to="." method="_on_comfirm_focus_entered"]
+[connection signal="pressed" from="BG/Comfirm" to="." method="_on_comfirm_pressed"]
+[connection signal="focus_entered" from="BG/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]

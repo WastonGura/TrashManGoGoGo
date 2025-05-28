@@ -1,0 +1,6 @@
+[gd_resource type="InputEventJoypadButton" format=3 uid="uid://cmx68tbw4544q"]
+
+[resource]
+device = -1
+button_index = 6
+pressed = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dma4w5n6i37x8"]
+
+[ext_resource type="Texture2D" uid="uid://baoew40bcp2m2" path="res://asset/image/Trash/Trash6.png" id="1_0kjy8"]
+[ext_resource type="Script" uid="uid://clfngwfv0cv40" path="res://scrips/Trash/glass_bottle_3.gd" id="1_q48s5"]
+[ext_resource type="Shape2D" uid="uid://brwwhmssfodds" path="res://resource/Shape/Trash/glass_bottle_3_shape_2d.tres" id="2_q48s5"]
+
+[node name="glass_bottle3" type="Area2D" groups=["Trash"]]
+visible = false
+script = ExtResource("1_q48s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0kjy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = ExtResource("2_q48s5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
