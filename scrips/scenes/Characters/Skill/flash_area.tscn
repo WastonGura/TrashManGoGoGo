@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ca1hkv1ikbld2" path="res://asset/audio/SoundEffect/雷电.wav" id="5_3urdg"]
 [ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="5_e8t5c"]
 
+
 [node name="FlashArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "timer", "animation_player") groups=["Hurtbox"]]
 collision_layer = 16
 collision_mask = 32

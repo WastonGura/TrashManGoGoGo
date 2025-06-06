@@ -1,9 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bwqy8omor3n6p"]
 
-[ext_resource type="Script" uid="uid://dcdpkvixnltmx" path="res://scrips/Game/oldplayer/harm.gd" id="1_a3jot"]
+[ext_resource type="Script" path="res://scrips/Game/oldplayer/harm.gd" id="1_a3jot"]
 [ext_resource type="Texture2D" uid="uid://cm2omnpidq8p5" path="res://asset/image/TrashMan/桶.png" id="2_10oe7"]
 [ext_resource type="Texture2D" uid="uid://0wvfayiajc0t" path="res://asset/image/TrashMan/桶盖 俯视.png" id="3_paqpo"]
 [ext_resource type="Shape2D" uid="uid://cdiw0aaxr8rwq" path="res://resource/Shape/TrashManShape.tres" id="4_kchp7"]
+
 
 [sub_resource type="Animation" id="Animation_80ws1"]
 resource_name = "Enter"

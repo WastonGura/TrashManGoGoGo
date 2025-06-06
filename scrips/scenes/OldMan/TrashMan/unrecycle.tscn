@@ -1,10 +1,11 @@
 [gd_scene load_steps=27 format=3 uid="uid://cewtb7o7eh7g5"]
 
-[ext_resource type="Script" uid="uid://bf8womegmcvj8" path="res://scrips/Game/oldplayer/unrecycle.gd" id="1_sshri"]
+[ext_resource type="Script" path="res://scrips/Game/oldplayer/unrecycle.gd" id="1_sshri"]
 [ext_resource type="Texture2D" uid="uid://cm2omnpidq8p5" path="res://asset/image/TrashMan/桶.png" id="2_1afrk"]
 [ext_resource type="Texture2D" uid="uid://0wvfayiajc0t" path="res://asset/image/TrashMan/桶盖 俯视.png" id="3_p5mnu"]
 [ext_resource type="Shape2D" uid="uid://cdiw0aaxr8rwq" path="res://resource/Shape/TrashManShape.tres" id="4_iud46"]
 [ext_resource type="Shape2D" uid="uid://cqjs61uvdkgua" path="res://resource/Shape/catch_shape.tres" id="5_kun8j"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_twuby"]
 radius = 57.0

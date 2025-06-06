@@ -1,7 +1,0 @@
-[gd_resource type="Shortcut" load_steps=3 format=3 uid="uid://cf7bl581cyr2n"]
-
-[ext_resource type="InputEventJoypadButton" uid="uid://dfnnji40lq2od" path="res://resource/shortcut/joykey/B.tres" id="1_kingv"]
-[ext_resource type="InputEventKey" uid="uid://bq4xebftbgnwp" path="res://resource/shortcut/key/esc.tres" id="2_mfol3"]
-
-[resource]
-events = [ExtResource("1_kingv"), ExtResource("2_mfol3")]

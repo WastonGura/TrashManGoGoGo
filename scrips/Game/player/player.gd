@@ -35,6 +35,15 @@ var right_run_action: String
 var is_burning: bool = false
 var burn: bool = false
 
+signal id_ready
+
+func _ready() -> void:
+	init_setting()
+	init.burn()
+	root_node = get_parent()
+	print("Current Hp: ", healeth_component.get_HP())
+	healeth_component.connect("damage_over", Callable(self, "award"))
+
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
@@ -56,13 +65,7 @@ func init_setting() -> void:
 	jump_action = get_input_action("Jump", input_prefix)
 	left_run_action = get_input_action("LeftRun", input_prefix)
 	right_run_action = get_input_action("RightRun", input_prefix)
-
-func _ready() -> void:
-	init_setting()
-	init.burn()
-	root_node = get_parent()
-	print("Current Hp: ", healeth_component.get_HP())
-	healeth_component.connect("damage_over", Callable(self, "award"))
+	emit_signal("id_ready")
 
 func award(damage, is_shield):
 	if not is_shield:

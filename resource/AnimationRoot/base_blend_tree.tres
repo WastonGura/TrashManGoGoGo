@@ -151,7 +151,7 @@ fadein_time = 0.1
 fadeout_time = 0.1
 
 [resource]
-graph_offset = Vector2(426.582, -706.185)
+graph_offset = Vector2(288.942, -433.052)
 nodes/Action/node = SubResource("AnimationNodeBlendSpace2D_x182s")
 nodes/Action/position = Vector2(1620, -520)
 nodes/ActionOneShot/node = SubResource("AnimationNodeOneShot_11q8k")

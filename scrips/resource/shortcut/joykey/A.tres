@@ -1,5 +1,0 @@
-[gd_resource type="InputEventJoypadButton" format=3 uid="uid://cjj4obmskpjia"]
-
-[resource]
-device = -1
-pressed = true

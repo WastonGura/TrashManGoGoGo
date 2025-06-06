@@ -1,9 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bqw1ajg2fmtv"]
 
-[ext_resource type="Script" uid="uid://744qfi42kejf" path="res://scrips/Lobby/Card/recyclecard.gd" id="1_cshfs"]
+[ext_resource type="Script" path="res://scrips/Lobby/Card/recyclecard.gd" id="1_cshfs"]
 [ext_resource type="Texture2D" uid="uid://cm2omnpidq8p5" path="res://asset/image/TrashMan/桶.png" id="2_t6ito"]
 [ext_resource type="Texture2D" uid="uid://0wvfayiajc0t" path="res://asset/image/TrashMan/桶盖 俯视.png" id="3_2rs1t"]
 [ext_resource type="Shape2D" uid="uid://cdiw0aaxr8rwq" path="res://resource/Shape/TrashManShape.tres" id="4_rpcdc"]
+
 
 [sub_resource type="Animation" id="Animation_ylkpn"]
 resource_name = "Enter"

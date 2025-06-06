@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dreyah3w5rc34" path="res://scrips/Trash/new_paper.gd" id="1_7op1s"]
 [ext_resource type="Shape2D" uid="uid://b0y227siqx5rp" path="res://resource/Shape/Trash/new_paper_shape_2d.tres" id="2_7op1s"]
 
+
 [node name="new_paper" type="Area2D" groups=["Trash"]]
 visible = false
 script = ExtResource("1_7op1s")

@@ -1,7 +1,0 @@
-[gd_resource type="Shortcut" load_steps=2 format=3 uid="uid://d2i58g8cea51c"]
-
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_o2ksp"]
-device = -1
-
-[resource]
-events = [SubResource("InputEventJoypadButton_o2ksp")]

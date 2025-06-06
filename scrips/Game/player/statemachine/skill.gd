@@ -22,8 +22,41 @@ extends Node2D
 
 signal skill_created(skill)
 
-func _process(_delta: float) -> void:
-	handle_input()
+# 主技能键和组合技能键
+var MAIN_ACTION = ""
+var COMBO_ACTIONS = {
+	"skill1": '',
+	"skill2": '',
+}
+
+# 当前状态
+var is_main_action_pressed = false
+var current_combo_action = ""  # 只存储一个组合动作
+
+# 信号
+signal skill_triggered(skill_name)
+
+func _ready() -> void:
+	skill_triggered.connect(Callable(self,"_haddle_skill"))
+
+func _set_action():
+	# 主技能键和组合技能键
+	MAIN_ACTION = player.skill_action
+	COMBO_ACTIONS = {
+		"skill1": player.get_action,
+		"skill2": player.defend_action,
+	}
+	print(player.skill_action)
+
+
+func _haddle_skill(skill_name):
+	match skill_name:
+		"basic_skill":
+			player.state_chart.send_event("angle")
+		player.get_action:
+			player.state_chart.send_event("stars")
+		player.defend_action:
+			player.state_chart.send_event("flash")
 
 func fire():
 	persona.play()
@@ -60,16 +93,51 @@ func spark():
 		# 添加到场景
 		emit_signal("skill_created", star)
 
-func handle_input():
-	if player_control.can_skill:
-		if Input.is_action_just_pressed(player.skill_action):
-			print("skill")
-			if Input.is_action_pressed(player.get_action):
-				player.state_chart.send_event("stars")
-			elif Input.is_action_pressed(player.defend_action):
-				player.state_chart.send_event("flash")
-			else:
-				player.state_chart.send_event("angle")
+#func _input(InputEvent):
+	#if player_control.can_skill:
+		#if Input.is_action_pressed(player.skill_action):
+			#print("skill")
+			#if Input.is_action_pressed(player.get_action):
+				#player.state_chart.send_event("stars")
+			#elif Input.is_action_pressed(player.defend_action):
+				#player.state_chart.send_event("flash")
+			#else:
+				#player.state_chart.send_event("angle")
+
+func _input(event):
+	if event.is_action_pressed(MAIN_ACTION):
+		# 主动作按下
+		is_main_action_pressed = true
+		current_combo_action = ""  # 重置组合动作
+	elif event.is_action_released(MAIN_ACTION):
+		# 主动作释放，触发技能
+		trigger_skill()
+	
+	# 检查组合动作
+	if is_main_action_pressed:
+		for action_name in COMBO_ACTIONS.values():
+			if event.is_action_pressed(action_name):
+				# 如果已经有组合动作，则忽略新的按键
+				if current_combo_action == "":
+					current_combo_action = action_name
+			elif event.is_action_released(action_name):
+				if current_combo_action == action_name:
+					current_combo_action = ""
+
+func trigger_skill():
+	# 根据按下的组合动作决定技能
+	var skill_name = "basic_skill"  # 默认技能
+	
+	if current_combo_action != "":
+		# 使用当前组合动作作为技能名称
+		skill_name = current_combo_action
+	
+	# 触发技能
+	emit_signal("skill_triggered", skill_name)
+	
+	# 重置状态
+	is_main_action_pressed = false
+	current_combo_action = ""
 
 func _on_flash_state_entered() -> void:
 	flash_timer.start()

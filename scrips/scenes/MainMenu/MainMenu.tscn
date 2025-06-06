@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6rf2lfy8tn1n" path="res://scrips/MainMenu/MainMenu.gd" id="1_mqas3"]
 [ext_resource type="Texture2D" uid="uid://jbt4ygtim2jd" path="res://asset/image/UI/MainMenu/MainMenuBG@2x.png" id="2_bfo1e"]
 [ext_resource type="Texture2D" uid="uid://dahjpt0dho75a" path="res://asset/image/UI/MainMenu/GameName.png" id="2_y5ja3"]
-[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://asset/audio/SoundEffect/确认音效.wav" id="2_yv4eq"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scenes/OldMan/TrashMan/确认音效.wav" id="2_yv4eq"]
 [ext_resource type="Texture2D" uid="uid://b1lgfi6vogmp2" path="res://asset/image/UI/MainMenu/双人对决_normal@2x.png" id="3_mqas3"]
 [ext_resource type="Texture2D" uid="uid://m23ngvu68gmd" path="res://asset/image/UI/MainMenu/双人对决@2x.png" id="4_oy0qi"]
 [ext_resource type="Texture2D" uid="uid://5cusnt1way2s" path="res://asset/image/UI/MainMenu/单人对战_normal@2x.png" id="5_bfo1e"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://de26u3a3y4v2a" path="res://asset/image/UI/MainMenu/系统设置@2x.png" id="8_oj5b0"]
 [ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://resource/shortcut/quit_button.tres" id="11_bfo1e"]
 [ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://asset/image/UI/MainMenu/Quit@2x.png" id="12_bfo1e"]
+
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("confirm_sound_voice", "move_sound_voice")]
 layout_mode = 3

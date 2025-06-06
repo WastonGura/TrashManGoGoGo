@@ -2,9 +2,9 @@ extends Control
 
 # 导入区
 ## 节点
-@onready var title = $"Panel/Title"
-@onready var quit = $"Panel/Quit"
-@onready var comfirm = $"Panel/Comfirm"
+@onready var title: Label = $BG/Title
+@onready var comfirm: Button = $BG/Comfirm
+@onready var quit: Button = $BG/Quit
 
 
 # 信号接收区

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsdd1fqd3mxaf" path="res://asset/test/images/card1.jpg" id="1_f0r7k"]
 
+
 [node name="CharacterCard" type="Control"]
 layout_mode = 3
 anchor_left = 0.472

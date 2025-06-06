@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://clfngwfv0cv40" path="res://scrips/Trash/glass_bottle_3.gd" id="1_q48s5"]
 [ext_resource type="Shape2D" uid="uid://brwwhmssfodds" path="res://resource/Shape/Trash/glass_bottle_3_shape_2d.tres" id="2_q48s5"]
 
+
 [node name="glass_bottle3" type="Area2D" groups=["Trash"]]
 visible = false
 script = ExtResource("1_q48s5")

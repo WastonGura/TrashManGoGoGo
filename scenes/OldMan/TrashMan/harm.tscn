@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://d14suyom10ve1"]
 
-[ext_resource type="Script" uid="uid://dcdpkvixnltmx" path="res://scrips/Game/oldplayer/harm.gd" id="1_h3chb"]
+[ext_resource type="Script" path="res://scrips/Game/oldplayer/harm.gd" id="1_h3chb"]
 [ext_resource type="Texture2D" uid="uid://cm2omnpidq8p5" path="res://asset/image/TrashMan/桶.png" id="2_qgewd"]
 [ext_resource type="Texture2D" uid="uid://0wvfayiajc0t" path="res://asset/image/TrashMan/桶盖 俯视.png" id="3_o8kc3"]
 [ext_resource type="Shape2D" uid="uid://cdiw0aaxr8rwq" path="res://resource/Shape/TrashManShape.tres" id="4_vjst3"]

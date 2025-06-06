@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp8jvarnkx6ia"]
 
-[ext_resource type="Texture2D" uid="uid://bt8fwx4tnapve" path="res://asset/test/images/CG4-1a.png" id="1_r2ghf"]
+[ext_resource type="Texture2D" path="res://asset/test/images/CG4-1a.png" id="1_r2ghf"]
 [ext_resource type="Script" uid="uid://c7eg4x8g7bvm8" path="res://scrips/SettingMenu/SettingMenu.gd" id="1_xf3w0"]
 [ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://resource/shortcut/quit_button.tres" id="2_g6dxv"]
 [ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://asset/image/UI/MainMenu/Quit@2x.png" id="4_xf3w0"]
 [ext_resource type="Shortcut" uid="uid://cf7bl581cyr2n" path="res://resource/shortcut/back.tres" id="5_bhxxo"]
 [ext_resource type="Texture2D" uid="uid://bmv7y6j6gronl" path="res://asset/image/UI/MainMenu/Home@2x.png" id="6_kobes"]
+
 
 [node name="SettingMenu" type="Control"]
 layout_mode = 3

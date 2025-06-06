@@ -6,7 +6,8 @@
 [ext_resource type="AnimationLibrary" uid="uid://c5mqlsnufc55a" path="res://resource/AnimationRoot/Animation/Library/AngleAnimation.res" id="3_6opah"]
 [ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="6_5iqkl"]
 [ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="7_qu3jo"]
-[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://asset/audio/SoundEffect/确认音效.wav" id="7_vu077"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scenes/OldMan/TrashMan/确认音效.wav" id="7_vu077"]
+
 
 [node name="AngleArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "flight_component", "animation_player") groups=["Hurtbox"]]
 collision_layer = 16

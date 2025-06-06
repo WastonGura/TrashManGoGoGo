@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d3ej3x64qg8c3" path="res://scrips/Game/player/flight/Pot.gd" id="1_mt4lf"]
 [ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="3_b28j5"]
-[ext_resource type="Shape2D" uid="uid://qxfwl5eg8th0" path="res://scrips/resource/Shape/pot_attack.tres" id="3_vw8vx"]
-[ext_resource type="Texture2D" uid="uid://b3rd4t4d1j0jd" path="res://scrips/asset/image/TrashMan/桶盖 平视.png" id="4_x501p"]
+[ext_resource type="Shape2D" uid="uid://qxfwl5eg8th0" path="res://resource/Shape/pot_attack.tres" id="3_vw8vx"]
+[ext_resource type="Texture2D" uid="uid://b3rd4t4d1j0jd" path="res://asset/image/TrashMan/桶盖 平视.png" id="4_x501p"]
 [ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="5_7y0cv"]
 
 [node name="Pot" type="Area2D" node_paths=PackedStringArray("flight_component", "flight_attack_component") groups=["Hurtbox"]]
