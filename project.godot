@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 [autoload]
 
-GlobalSetting="*res://scrips/AutoLoad/systom_setting.gd"
+AudioManager="*res://scrips/AutoLoad/AudioManager.gd"
 
 [display]
 
@@ -36,7 +36,6 @@ enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
 
 folder_colors={
 "res://scrips/": "teal",
-"res://scrips/AutoLoad/": "red",
 "res://scrips/Game/player/skills/": "teal",
 "res://scrips/GameOver/": "blue",
 "res://scrips/Lobby/": "purple",

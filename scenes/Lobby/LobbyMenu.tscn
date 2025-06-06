@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cma355rq0ga6g" path="res://asset/image/UI/LobbyMenu/P2Idle.png" id="10_hregc"]
 [ext_resource type="Texture2D" uid="uid://df4em78j8g2pq" path="res://asset/image/UI/LobbyMenu/P1Choosed.png" id="11_bljag"]
 [ext_resource type="Texture2D" uid="uid://btf2od7x3y8d5" path="res://asset/image/UI/LobbyMenu/P2Choosed.png" id="12_xnqcd"]
-[ext_resource type="FontFile" uid="uid://0yxva75t0n2j" path="res://resource/fonts/FFF_AZADLIQ-Black.otf" id="13_hregc"]
+[ext_resource type="FontFile" path="res://resource/fonts/FFF_AZADLIQ-Black.otf" id="13_hregc"]
 [ext_resource type="StyleBox" uid="uid://bs7h0jwcju4fq" path="res://resource/Color/new_style_box_empty.tres" id="14_bljag"]
 
 [sub_resource type="Animation" id="Animation_ukm8p"]

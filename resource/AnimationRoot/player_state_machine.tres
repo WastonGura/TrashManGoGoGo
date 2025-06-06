@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=21 format=3 uid="uid://b7gp3qfrkimx7"]
+[gd_resource type="AnimationNodeStateMachine" load_steps=22 format=3 uid="uid://b7gp3qfrkimx7"]
 
 [ext_resource type="AnimationNodeBlendTree" uid="uid://bngad2be8fmog" path="res://resource/AnimationRoot/base_blend_tree.tres" id="1_r3u4s"]
 
@@ -83,6 +83,10 @@ advance_expression = "is_hurting"
 advance_mode = 2
 advance_expression = "die"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ra4gd"]
+advance_mode = 2
+advance_expression = "end_defend"
+
 [resource]
 states/BlendTree/node = ExtResource("1_r3u4s")
 states/BlendTree/position = Vector2(253, 100)
@@ -97,5 +101,5 @@ states/Die/position = Vector2(770, 220)
 states/Hurt/node = SubResource("AnimationNodeAnimation_ndenm")
 states/Hurt/position = Vector2(495, 220)
 states/Start/position = Vector2(87, 100)
-transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_6qcbw"), "BlendTree", "Hurt", SubResource("AnimationNodeStateMachineTransition_l7hs3"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_3sbeg"), "BlendTree", "DefendStart", SubResource("AnimationNodeStateMachineTransition_cdoeg"), "DefendContinue", "DefendEnd", SubResource("AnimationNodeStateMachineTransition_oo4rr"), "DefendEnd", "BlendTree", SubResource("AnimationNodeStateMachineTransition_k5ao2"), "DefendStart", "DefendContinue", SubResource("AnimationNodeStateMachineTransition_jhquf"), "DefendStart", "Hurt", SubResource("AnimationNodeStateMachineTransition_c7og1"), "Die", "BlendTree", SubResource("AnimationNodeStateMachineTransition_5oxwy"), "Hurt", "BlendTree", SubResource("AnimationNodeStateMachineTransition_8ya1b"), "DefendStart", "DefendEnd", SubResource("AnimationNodeStateMachineTransition_g8klo"), "DefendContinue", "Hurt", SubResource("AnimationNodeStateMachineTransition_o7ql4"), "DefendEnd", "Hurt", SubResource("AnimationNodeStateMachineTransition_2wh2h"), "BlendTree", "Die", SubResource("AnimationNodeStateMachineTransition_r3u4s")]
-graph_offset = Vector2(130, -10)
+transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_6qcbw"), "BlendTree", "Hurt", SubResource("AnimationNodeStateMachineTransition_l7hs3"), "Hurt", "Die", SubResource("AnimationNodeStateMachineTransition_3sbeg"), "BlendTree", "DefendStart", SubResource("AnimationNodeStateMachineTransition_cdoeg"), "DefendContinue", "DefendEnd", SubResource("AnimationNodeStateMachineTransition_oo4rr"), "DefendEnd", "BlendTree", SubResource("AnimationNodeStateMachineTransition_k5ao2"), "DefendStart", "DefendContinue", SubResource("AnimationNodeStateMachineTransition_jhquf"), "DefendStart", "Hurt", SubResource("AnimationNodeStateMachineTransition_c7og1"), "Die", "BlendTree", SubResource("AnimationNodeStateMachineTransition_5oxwy"), "Hurt", "BlendTree", SubResource("AnimationNodeStateMachineTransition_8ya1b"), "DefendStart", "DefendEnd", SubResource("AnimationNodeStateMachineTransition_g8klo"), "DefendContinue", "Hurt", SubResource("AnimationNodeStateMachineTransition_o7ql4"), "DefendEnd", "Hurt", SubResource("AnimationNodeStateMachineTransition_2wh2h"), "BlendTree", "Die", SubResource("AnimationNodeStateMachineTransition_r3u4s"), "DefendStart", "BlendTree", SubResource("AnimationNodeStateMachineTransition_ra4gd")]
+graph_offset = Vector2(-103, -106)

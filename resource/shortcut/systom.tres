@@ -3,5 +3,6 @@
 [ext_resource type="InputEventKey" uid="uid://4y35qrhmk0g1" path="res://resource/shortcut/key/tap.tres" id="1_im6lm"]
 [ext_resource type="InputEventJoypadButton" uid="uid://dxvpox4tgv60o" path="res://resource/shortcut/joykey/手柄系统键.tres" id="2_q3ryl"]
 
+
 [resource]
 events = [ExtResource("1_im6lm"), ExtResource("2_q3ryl")]

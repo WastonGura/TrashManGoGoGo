@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwl5pjq7jklvt" path="res://asset/image/Trash/Trash1.png" id="1_m8cm2"]
 [ext_resource type="Shape2D" uid="uid://d1ndw8v13d608" path="res://resource/Shape/Trash/plastic_bottle_shape_2d.tres" id="2_12o1y"]
 
+
 [node name="plastic_bottle" type="Area2D" groups=["Trash"]]
 script = ExtResource("1_12o1y")
 

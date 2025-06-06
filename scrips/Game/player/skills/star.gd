@@ -7,6 +7,7 @@ extends Area2D
 @export var flight_attack_component: FlightAttackComponent
 
 func _ready() -> void:
+	flight_attack_component.connect("attack_over", Callable(flight_component, 'destroy'))
 	start()
 
 func start() -> void:
@@ -14,7 +15,7 @@ func start() -> void:
 	stars_audio_stream_player.play()
 
 func _process(_delta: float) -> void:
-	flight_attack_component.connect("attack_over", Callable(flight_component, 'destroy'))
+	pass
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Hitbox"):

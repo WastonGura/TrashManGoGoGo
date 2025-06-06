@@ -6,8 +6,8 @@ extends Node2D
 @export var canvas_layer: CanvasLayer
 @export var game_over_scene: PackedScene
 
-@onready var bgm: AudioStreamPlayer = $BGM
-
+@export var bg_music1:AudioStream
+@export var bg_music2:AudioStream
 
 var HP_P1
 var EP_P1
@@ -23,6 +23,7 @@ func _ready() -> void:
 		remote_attack.connect("pet_created", Callable(self, 'handle_flight_instance'))
 		skill.connect("skill_created", Callable(self, "handle_flight_instance"))
 		init.connect("game_over", Callable(self, "game_over"))
+	AudioManager.play_music(bg_music1)
 
 func _process(_delta: float) -> void:
 	HP_P1 = player_P1.healeth_component.get_HP()
@@ -39,7 +40,8 @@ func handle_flight_instance(instance):
 	instance.show()
 
 func game_over(player_id):
-	bgm.stop()
 	var game_over_instance = game_over_scene.instantiate()
 	game_over_instance.set_result(player_id, player_P1, player_P2)
 	canvas_layer.add_child(game_over_instance)
+	AudioManager.play_music(bg_music2)
+	#get_tree().paused = true

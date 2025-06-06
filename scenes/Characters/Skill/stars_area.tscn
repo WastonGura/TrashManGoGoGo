@@ -6,7 +6,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://bgoydfpjh1qt6" path="res://resource/AnimationRoot/Animation/Library/StarAnimation.res" id="4_fhgxi"]
 [ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="6_aqolw"]
 [ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="6_v3jqq"]
-[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://asset/audio/SoundEffect/确认音效.wav" id="7_kv11n"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scenes/OldMan/TrashMan/确认音效.wav" id="7_kv11n"]
 
 [node name="StarsArea" type="Area2D" node_paths=PackedStringArray("animation_player", "flight_component", "flight_attack_component") groups=["Hurtbox"]]
 collision_layer = 16

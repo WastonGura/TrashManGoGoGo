@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnoexkad6eu7p" path="res://asset/image/Trash/Trash8.png" id="1_lfxcp"]
 [ext_resource type="Shape2D" uid="uid://btgiln1l6c4lc" path="res://resource/Shape/Trash/drink_can_shape_2d.tres" id="2_1bg2c"]
 
+
 [node name="drink_can" type="Area2D" groups=["Trash"]]
 visible = false
 script = ExtResource("1_1bg2c")

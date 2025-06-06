@@ -1,34 +1,49 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5fi5r0rgc17d"]
+[gd_scene load_steps=16 format=3 uid="uid://b5fi5r0rgc17d"]
 
 [ext_resource type="Script" uid="uid://c6rf2lfy8tn1n" path="res://scrips/MainMenu/MainMenu.gd" id="1_mqas3"]
-[ext_resource type="Texture2D" uid="uid://dahjpt0dho75a" path="res://scrips/asset/image/UI/MainMenu/GameName.png" id="2_y5ja3"]
-[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scrips/asset/audio/SoundEffect/确认音效.wav" id="2_yv4eq"]
-[ext_resource type="Texture2D" uid="uid://b1lgfi6vogmp2" path="res://scrips/asset/image/UI/MainMenu/双人对决_normal@2x.png" id="3_mqas3"]
-[ext_resource type="Texture2D" uid="uid://m23ngvu68gmd" path="res://scrips/asset/image/UI/MainMenu/双人对决@2x.png" id="4_oy0qi"]
-[ext_resource type="Texture2D" uid="uid://5cusnt1way2s" path="res://scrips/asset/image/UI/MainMenu/单人对战_normal@2x.png" id="5_bfo1e"]
-[ext_resource type="AudioStream" uid="uid://bygor1qu8qmpt" path="res://scrips/asset/audio/SoundEffect/移动UI音效.wav" id="6_bfo1e"]
-[ext_resource type="Texture2D" uid="uid://bhn4g823ng6dh" path="res://scrips/asset/image/UI/MainMenu/单人对战@2x.png" id="6_yv4eq"]
-[ext_resource type="Texture2D" uid="uid://c6x44lyehjw0x" path="res://scrips/asset/image/UI/MainMenu/系统设置_normal@2x.png" id="7_bung8"]
-[ext_resource type="Texture2D" uid="uid://de26u3a3y4v2a" path="res://scrips/asset/image/UI/MainMenu/系统设置@2x.png" id="8_oj5b0"]
-[ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://scrips/resource/shortcut/quit_button.tres" id="11_bfo1e"]
-[ext_resource type="Texture2D" uid="uid://1jlvxufh6twg" path="res://scrips/asset/image/UI/MainMenu/Quit@2x.png" id="12_bfo1e"]
+[ext_resource type="AudioStream" uid="uid://bbduf0xo2tr6r" path="res://scenes/OldMan/TrashMan/确认音效.wav" id="2_0qq82"]
+[ext_resource type="AudioStream" uid="uid://bygor1qu8qmpt" path="res://asset/audio/SoundEffect/移动UI音效.wav" id="3_y5ja3"]
+[ext_resource type="AudioStream" uid="uid://d3qaglh6hs11a" path="res://asset/audio/Bgm/目黒将司 - Beneath the Mask (Instrumental Version).wav" id="4_hlhgs"]
+[ext_resource type="PackedScene" uid="uid://dp8jvarnkx6ia" path="res://scenes/Setting/SettingMenu.tscn" id="5_0qq82"]
+[ext_resource type="PackedScene" uid="uid://b15n56h8prtt8" path="res://scenes/Game/Game.tscn" id="6_0qq82"]
+[ext_resource type="PackedScene" uid="uid://d0ik4s0qsbljs" path="res://scenes/GameOver/QuitMenu.tscn" id="7_y5ja3"]
+[ext_resource type="Shortcut" uid="uid://cmavkcl7tbsm5" path="res://resource/shortcut/quit_button.tres" id="11_bfo1e"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bfo1e"]
 load_path = "res://.godot/imported/BG.png-9253ab3633f91699ee5a67dd114f1274.ctex"
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("confirm_sound_voice", "move_sound_voice")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_mqas3")
-confirm_sound_voice = NodePath("confirm_sound_voice")
-move_sound_voice = NodePath("move_sound_voice")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r8q81"]
+load_path = "res://.godot/imported/GameName.png-7324e8fdfdf082654ff7bd4395f9227c.ctex"
 
-[node name="BG" type="TextureRect" parent="."]
-layout_mode = 1
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7j8ul"]
+load_path = "res://.godot/imported/双人对决_normal@2x.png-f5940000961907dc9e5e6ae628eb5cd5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0qq82"]
+load_path = "res://.godot/imported/双人对决@2x.png-937bfef0013ed15d6e81217bb3c280f8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y5ja3"]
+load_path = "res://.godot/imported/系统设置_normal@2x.png-1d49a6981333933f4df80ebee2af2219.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mqas3"]
+load_path = "res://.godot/imported/系统设置@2x.png-229e4810b76283a27151384d8bd1116a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oy0qi"]
+load_path = "res://.godot/imported/Quit@2x.png-2c62687fca93a368eae7902796223d2e.ctex"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mqas3")
+confirm_sound_voice = ExtResource("2_0qq82")
+move_sound_voice = ExtResource("3_y5ja3")
+bgm = ExtResource("4_hlhgs")
+SettingMenuScene = ExtResource("5_0qq82")
+GameScene = ExtResource("6_0qq82")
+QuitMenuScene = ExtResource("7_y5ja3")
+
+[node name="BackGroud" type="CanvasLayer" parent="."]
+
+[node name="BG" type="TextureRect" parent="BackGroud"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -38,86 +53,78 @@ texture = SubResource("CompressedTexture2D_bfo1e")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="GameName" type="TextureRect" parent="BG"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.05
-anchor_right = 0.8
-anchor_bottom = 0.1
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+[node name="GameName" type="TextureRect" parent="BackGroud"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 275.0
 grow_horizontal = 2
-texture = ExtResource("2_y5ja3")
+texture = SubResource("CompressedTexture2D_r8q81")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="ButtonLayout" type="VBoxContainer" parent="BG"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.43
-anchor_top = 0.6
-anchor_right = 0.57
-anchor_bottom = 0.85
+[node name="Configs" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ButtonLayout" type="VBoxContainer" parent="Configs"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -380.0
+offset_right = 150.0
+offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 50
 
-[node name="双人对决" type="TextureButton" parent="BG/ButtonLayout"]
+[node name="双人对决" type="TextureButton" parent="Configs/ButtonLayout"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-texture_normal = ExtResource("3_mqas3")
-texture_pressed = ExtResource("4_oy0qi")
-texture_hover = ExtResource("4_oy0qi")
+texture_normal = SubResource("CompressedTexture2D_7j8ul")
+texture_pressed = SubResource("CompressedTexture2D_0qq82")
+texture_hover = SubResource("CompressedTexture2D_0qq82")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="单人对战" type="TextureButton" parent="BG/ButtonLayout"]
+[node name="系统设置" type="TextureButton" parent="Configs/ButtonLayout"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-texture_normal = ExtResource("5_bfo1e")
-texture_pressed = ExtResource("6_yv4eq")
-texture_hover = ExtResource("6_yv4eq")
+texture_normal = SubResource("CompressedTexture2D_y5ja3")
+texture_pressed = SubResource("CompressedTexture2D_mqas3")
+texture_hover = SubResource("CompressedTexture2D_mqas3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="系统设置" type="TextureButton" parent="BG/ButtonLayout"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-texture_normal = ExtResource("7_bung8")
-texture_pressed = ExtResource("8_oj5b0")
-texture_hover = ExtResource("8_oj5b0")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Quit" type="TextureButton" parent="BG"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.99
-anchor_top = 0.99
-anchor_right = 0.99
-anchor_bottom = 0.99
-offset_left = -40.0
-offset_top = -40.0
+[node name="Quit" type="TextureButton" parent="Configs"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 1
 shortcut = ExtResource("11_bfo1e")
 shortcut_in_tooltip = false
-texture_normal = ExtResource("12_bfo1e")
+texture_normal = SubResource("CompressedTexture2D_oy0qi")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="confirm_sound_voice" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_yv4eq")
+[node name="PageContainer" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="move_sound_voice" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_bfo1e")
-
-[connection signal="mouse_entered" from="BG/ButtonLayout/双人对决" to="." method="_on_双人对决_mouse_entered"]
-[connection signal="pressed" from="BG/ButtonLayout/双人对决" to="." method="_on_双人对决_pressed"]
-[connection signal="mouse_entered" from="BG/ButtonLayout/单人对战" to="." method="_on_单人对战_mouse_entered"]
-[connection signal="pressed" from="BG/ButtonLayout/单人对战" to="." method="_on_单人对战_pressed"]
-[connection signal="mouse_entered" from="BG/ButtonLayout/系统设置" to="." method="_on_系统设置_mouse_entered"]
-[connection signal="pressed" from="BG/ButtonLayout/系统设置" to="." method="_on_系统设置_pressed"]
-[connection signal="pressed" from="BG/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Configs/ButtonLayout/双人对决" to="." method="_on_双人对决_mouse_entered"]
+[connection signal="pressed" from="Configs/ButtonLayout/双人对决" to="." method="_on_双人对决_pressed"]
+[connection signal="mouse_entered" from="Configs/ButtonLayout/系统设置" to="." method="_on_系统设置_mouse_entered"]
+[connection signal="pressed" from="Configs/ButtonLayout/系统设置" to="." method="_on_系统设置_pressed"]
+[connection signal="pressed" from="Configs/Quit" to="." method="_on_quit_pressed"]

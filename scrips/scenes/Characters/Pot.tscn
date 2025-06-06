@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3rd4t4d1j0jd" path="res://asset/image/TrashMan/桶盖 平视.png" id="4_x501p"]
 [ext_resource type="Script" uid="uid://d2t5myp5pulfg" path="res://scrips/Game/player/component/flight/flight_component.gd" id="5_7y0cv"]
 
+
 [node name="Pot" type="Area2D" node_paths=PackedStringArray("flight_component", "flight_attack_component") groups=["Hurtbox"]]
 collision_layer = 4
 collision_mask = 32

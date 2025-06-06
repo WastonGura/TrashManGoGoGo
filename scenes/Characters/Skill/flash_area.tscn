@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cap4jras4xfpo"]
 
 [ext_resource type="Script" uid="uid://dnyhwevy36f1d" path="res://scrips/Game/player/skills/flash.gd" id="1_ys4ju"]
-[ext_resource type="AnimationLibrary" uid="uid://bjpo8wmdliy50" path="res://scrips/resource/AnimationRoot/Animation/Library/FlashAnimation.res" id="2_c0upe"]
-[ext_resource type="Texture2D" uid="uid://82rule6l7xy4" path="res://scrips/asset/image/Skill/flash/flash_00003.png" id="2_e8t5c"]
-[ext_resource type="AudioStream" uid="uid://ca1hkv1ikbld2" path="res://scrips/asset/audio/SoundEffect/雷电.wav" id="5_3urdg"]
+[ext_resource type="AnimationLibrary" uid="uid://bjpo8wmdliy50" path="res://resource/AnimationRoot/Animation/Library/FlashAnimation.res" id="2_c0upe"]
+[ext_resource type="Texture2D" uid="uid://82rule6l7xy4" path="res://asset/image/Skill/flash/flash_00003.png" id="2_e8t5c"]
+[ext_resource type="AudioStream" uid="uid://ca1hkv1ikbld2" path="res://asset/audio/SoundEffect/雷电.wav" id="5_3urdg"]
 [ext_resource type="Script" uid="uid://d2i123i0ly6kg" path="res://scrips/Game/player/component/attack/flight_attack_component.gd" id="5_e8t5c"]
 
 [node name="FlashArea" type="Area2D" node_paths=PackedStringArray("flight_attack_component", "timer", "animation_player") groups=["Hurtbox"]]
